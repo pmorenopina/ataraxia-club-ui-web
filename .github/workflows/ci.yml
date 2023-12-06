@@ -32,3 +32,11 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run build
+  codeql:
+    name: "CodeQL"
+    needs: build
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    uses: ./.github/workflows/codeql.yml
