@@ -34,4 +34,5 @@ jobs:
     - run: npm run build
   codeql:
     name: "CodeQL"
+    needs: build
     uses: ./.github/workflows/codeql.yml
