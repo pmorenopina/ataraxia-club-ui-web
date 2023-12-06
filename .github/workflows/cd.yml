@@ -1,0 +1,29 @@
+name: CD
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  ci:
+    name: "CI"
+    uses: ./.github/workflows/ci.yml
+  deploy:
+    name: "Deploy to Kinsta"
+    needs: ci
+    runs-on: ubuntu-latest
+    steps:
+    - name: cURL POST
+      env:
+        KINSTA_API_KEY: ${{ secrets.KINSTA_TOKEN }}
+        APP_ID: ${{ secrets.KINSTA_APP_ID }}
+      run: |
+        curl -i -X POST \
+        https://api.kinsta.com/v2/static-sites/deployments \
+        -H "Authorization: Bearer $KINSTA_TOKEN" \
+        -H "Content-Type: application/json" \
+        -d '{
+          "static_site_id": "'"$KINSTA_APP_ID"'",
+          "branch": "${{  github.ref_name }}"
+        }'
