@@ -16,8 +16,8 @@ jobs:
     steps:
     - name: cURL POST
       env:
-        KINSTA_API_KEY: ${{ secrets.KINSTA_TOKEN }}
-        APP_ID: ${{ secrets.KINSTA_APP_ID }}
+        KINSTA_TOKEN: ${{ secrets.KINSTA_TOKEN }}
+        KINSTA_APP_ID: ${{ secrets.KINSTA_APP_ID }}
       run: |
         curl -i -X POST \
         https://api.kinsta.com/v2/static-sites/deployments \
