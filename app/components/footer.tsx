@@ -10,10 +10,10 @@ import { Facebook, Instagram, YouTube } from '@mui/icons-material'
 const logoImage = (
   <div className="flex justify-center md:justify-end items-center w-full max-w-5xl mb-2 md:mr-5">
     <Image
-      alt="Vercel Logo"
+      alt="Ataraxia Logo"
       className="justify-self-end justify-end"
-      height={100}
-      src="/logo_ataraxia.png"
+      height={90}
+      src="ztsayuwynfj6g41hz4jc"
       width={80}
     />
   </div>
