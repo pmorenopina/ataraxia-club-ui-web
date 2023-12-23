@@ -11,9 +11,9 @@ const logoImage = (
   <div className="flex justify-center md:justify-end items-center w-full max-w-5xl mb-2 md:mr-5">
     <Image
       alt="Ataraxia Logo"
-      className="justify-self-end justify-end"
-      height={90}
-      src="ztsayuwynfj6g41hz4jc"
+      height={0}
+      loading="lazy"
+      src="logo_eye"
       width={80}
     />
   </div>
