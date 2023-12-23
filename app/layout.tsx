@@ -5,6 +5,7 @@ import './globals.css'
 import ThemeRegistry from './themeRegistry'
 
 // Components
+import Header from './components/header'
 import Footer from './components/footer'
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <ThemeRegistry options={{ key: 'mui-theme' }}>
+          <Header />
           {children}
           <Footer />
         </ThemeRegistry>
