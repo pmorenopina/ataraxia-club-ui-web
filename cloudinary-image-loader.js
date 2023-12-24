@@ -7,5 +7,5 @@ export default function cloudinaryLoader({ src, width, quality }) {
     'q_' + (quality || 'auto'),
     srcSplit[1] ? 'f_' + srcSplit[1] : '',
   ].join(',')
-  return `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/${params}/v1/ataraxia-club/${srcSplit[0]}`
+  return `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${params}/v1/ataraxia-club/${srcSplit[0]}`
 }
