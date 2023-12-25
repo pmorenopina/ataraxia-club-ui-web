@@ -1,9 +1,12 @@
 import { Metadata } from 'next'
 
+// Components
+import Maintenance from '@/app/components/maintenance'
+
 export const metadata: Metadata = {
   title: 'Entradas e información de eventos',
 }
 
 export default function EventsPage() {
-  return <h1>Hello, Events Page!</h1>
+  return <Maintenance />
 }
