@@ -8,14 +8,14 @@ import { LanguageSwitcher } from 'next-export-i18n'
 // Icons
 import { Menu } from '@mui/icons-material'
 
-export default function Footer() {
+export default function Header() {
   return (
-    <header className="flex justify-center h-20 py-3 border-b-2 border-fuchsia-600">
-      <div className="flex justify-between items-center h-full w-full max-w-5xl">
+    <header className="flex justify-center h-14 px-4 py-3 border-b-2 border-fuchsia-600 bg-gradient-to-t from-fuchsia-950 from-0% to-black to-70% md:px-8 md:h-16 lg:h-20">
+      <div className="flex justify-between items-center h-full w-full max-w-7xl">
         <Link href="/">
           <Image
             alt="Ataraxia Logo"
-            className="pt-1"
+            className="pt-1 max-w-44 md:max-w-48 lg:max-w-full"
             height={54}
             priority={true}
             src="logo_text|svg"
@@ -23,7 +23,7 @@ export default function Footer() {
           />
         </Link>
         <div className="flex items-center">
-          <div className="flex">
+          <div className="hidden md:flex">
             <LanguageSwitcher lang="es">
               <Image
                 alt="Spain Flag"
@@ -49,7 +49,7 @@ export default function Footer() {
               />
             </LanguageSwitcher>
           </div>
-          <Menu className="ml-20" fontSize="large" />
+          <Menu className="md:ml-20 !text-3xl md:!text-4xl lg:!text-5xl" />
         </div>
       </div>
     </header>
