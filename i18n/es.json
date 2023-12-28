@@ -1,0 +1,29 @@
+{
+  "errors": {
+    "notFound": {
+      "subtitle": "Página no encontrada"
+    }
+  },
+  "maintenance": {
+    "title": "ESTAMOS REFORMANDO NUESTRA WEB",
+    "subtitle": "Próximamente estaremos online"
+  },
+  "footer": {
+    "titles": {
+      "sections": "SECCIONES",
+      "legal": "LEGAL",
+      "contact": "CONTACTO"
+    },
+    "sections": {
+      "events": "Eventos",
+      "artists": "Artistas"
+    },
+    "legal": {
+      "cookies": "Política de cookies"
+    },
+    "contact": {
+      "contactUs": "Contáctanos"
+    },
+    "credits": "Website creada por"
+  }
+}

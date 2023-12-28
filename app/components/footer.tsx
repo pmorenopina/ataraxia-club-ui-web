@@ -1,3 +1,7 @@
+'use client'
+
+// Libs
+import { useTranslation } from 'next-export-i18n'
 import Link from 'next/link'
 
 // Components
@@ -11,7 +15,7 @@ const logoImage = (
   <div className="flex justify-center md:justify-end items-center w-full max-w-5xl mb-2 md:mr-5">
     <Image
       alt="Ataraxia Logo"
-      height={0}
+      height={90}
       loading="lazy"
       src="logo_eye"
       width={80}
@@ -19,44 +23,60 @@ const logoImage = (
   </div>
 )
 
-const sectionLinks = (
-  <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start w-full max-w-5xl text-center md:text-left text-sm">
-    <List
-      component="nav"
-      subheader={<ListSubheader component="h3">SECCIONES</ListSubheader>}
-    >
-      <ul>
-        <ListItem className="flex-col">
-          <Link href="/events">Eventos</Link>
-        </ListItem>
-        <ListItem className="flex-col">
-          <Link href="/artists">Artistas</Link>
-        </ListItem>
-      </ul>
-    </List>
-    <List
-      component="nav"
-      subheader={<ListSubheader component="h3">LEGAL</ListSubheader>}
-    >
-      <ul>
-        <ListItem className="flex-col">
-          <Link href="/cookies">Política de Cookies</Link>
-        </ListItem>
-      </ul>
-    </List>
-    <List
-      className="md:text-right"
-      component="nav"
-      subheader={<ListSubheader component="h3">CONTÁCTO</ListSubheader>}
-    >
-      <ul>
-        <ListItem className="flex-col">
-          <Link href="mailto:info@ataraxiaclub.com">Contáctanos</Link>
-        </ListItem>
-      </ul>
-    </List>
-  </div>
-)
+function SectionLinks({ t }: { t: any }) {
+  return (
+    <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start w-full max-w-5xl text-center md:text-left text-sm">
+      <List
+        component="nav"
+        subheader={
+          <ListSubheader component="h3">
+            {t('footer.titles.sections')}
+          </ListSubheader>
+        }
+      >
+        <ul>
+          <ListItem className="flex-col">
+            <Link href="/events">{t('footer.sections.events')}</Link>
+          </ListItem>
+          <ListItem className="flex-col">
+            <Link href="/artists">{t('footer.sections.artists')}</Link>
+          </ListItem>
+        </ul>
+      </List>
+      <List
+        component="nav"
+        subheader={
+          <ListSubheader component="h3">
+            {t('footer.titles.legal')}
+          </ListSubheader>
+        }
+      >
+        <ul>
+          <ListItem className="flex-col">
+            <Link href="/cookies">{t('footer.legal.cookies')}</Link>
+          </ListItem>
+        </ul>
+      </List>
+      <List
+        className="md:text-right"
+        component="nav"
+        subheader={
+          <ListSubheader component="h3">
+            {t('footer.titles.contact')}
+          </ListSubheader>
+        }
+      >
+        <ul>
+          <ListItem className="flex-col">
+            <Link href="mailto:info@ataraxiaclub.com">
+              {t('footer.contact.contactUs')}
+            </Link>
+          </ListItem>
+        </ul>
+      </List>
+    </div>
+  )
+}
 
 const socialLinks = (
   <nav className="flex justify-center md:justify-end items-center w-full max-w-5xl mb-10">
@@ -85,13 +105,14 @@ const socialLinks = (
 )
 
 export default function Footer() {
+  const { t } = useTranslation()
   return (
     <footer className="flex flex-col items-center px-28 pt-14 pb-2 border-t-2 border-fuchsia-600">
       {logoImage}
-      {sectionLinks}
+      <SectionLinks t={t} />
       {socialLinks}
       <span className="flex justify-center items-center w-full max-w-5xl text-xs">
-        Website created by
+        {t('footer.credits')}
         <Link
           className="ml-1"
           href="https://www.morenopina.com"
