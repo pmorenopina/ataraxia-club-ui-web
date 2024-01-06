@@ -1,0 +1,15 @@
+{
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "outputDirectory": "out",
+  "regions": ["cdg1"],
+  "trailingSlash": true,
+  "version": 2,
+  "git": {
+    "deploymentEnabled": {
+      "main": false
+    }
+  }
+}
