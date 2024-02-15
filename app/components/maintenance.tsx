@@ -14,7 +14,7 @@ export default function Maintenance() {
       <Image
         alt="Ataraxia Logo"
         className="py-1"
-        height={0}
+        height={261}
         src="bicho_animation"
         width={250}
       />
